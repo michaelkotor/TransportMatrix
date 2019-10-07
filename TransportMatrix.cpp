@@ -22,6 +22,7 @@ int main()
 	//transport(custom_matrix, custom_size);
 	//print(custom_matrix, custom_size);
 	print(rotate90(custom_matrix, custom_size), custom_size);
+	return 0;
 }
 
 void init(int** matrix, int size) {
@@ -80,7 +81,7 @@ int** rotate90(int** matrix, int size) {
 	{
 		for (int j = 0; j < size; j++)
 		{
-			new_matrix[j][size - 1 - i] = matrix[i][j];
+			*(*(new_matrix + j) + size - 1 - i) = *(*(matrix + i) + j);
 		}
 	}
 	return new_matrix;
